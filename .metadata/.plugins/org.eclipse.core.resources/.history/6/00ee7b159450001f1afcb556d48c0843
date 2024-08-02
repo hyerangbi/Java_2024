@@ -1,0 +1,34 @@
+package test240802.object1;
+
+import java.net.InetAddress;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.net.UnknownHostException;
+
+public class testClient {
+	public void client(){
+		int port = 3000;
+
+		String serverIP = "192.168.68.15";
+
+		try{
+			
+			serverIP = InetAddress.getByName(serverIP).getHostAddress();
+		//serverIP = InetAddress.getLocalHost().getHostAddress();
+			Socket socket = new Socket(serverIP,port);
+			
+
+		
+
+		}catch(UnknownHostException e) {
+			e.printStackTrace();
+		}
+
+		}
+
+
+
+		
+	
+	
+}

@@ -1,0 +1,17 @@
+package q.thread.chat;
+
+import java.io.IOException;
+import java.net.ServerSocket;
+
+public class TCPServer {
+	public static void main(String[] agrs) {
+		int port = 3000;
+		
+		try {
+			ServerSocket soc = new ServerSocket(port);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+}

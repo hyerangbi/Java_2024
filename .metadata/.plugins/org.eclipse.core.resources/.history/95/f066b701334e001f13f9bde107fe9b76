@@ -1,0 +1,16 @@
+package p.network;
+
+import java.io.BufferedReader;
+import java.io.PrintWriter;
+import java.util.Scanner;
+
+public class TCPClient {
+	public static void main(String[] agrs) {
+		Scanner sc = new Scanner(System.in);
+		BufferedReader br = null;
+		PrintWriter pw = null;
+		
+		// 요청하고자 하는 서버 : 192.168.30.15
+	
+	}
+}

@@ -1,0 +1,27 @@
+package o.collection.set;
+
+import java.util.HashSet;
+
+public class Run {
+
+	public static void main(String[] args) {
+		// Object에 equals() ⇨ 두 객체의 "주소 값"을 비교해서 일치하면
+		// true, 일치하지 않으면 false
+		
+		// Object에 hashCode() ⇨ 해당 객체의 "주소 값"을 가지고
+		// 10진수의 형태로 만들어서 변환
+		HashSet hsi = new HashSet();
+		
+		hsi.add("반갑습니다");
+		hsi.add(new String("반갑습니다."));
+		hsi.add(new String("여러분"));
+		hsi.add(new String("안녕하세요."));
+		hsi.add(new String("여러분"));
+		
+		System.out.println(hsi);
+		//저장순서를 유지하지 않는다 ! 중복된 데이터(동일객체) 보존 불가
+		 
+
+	}
+
+}

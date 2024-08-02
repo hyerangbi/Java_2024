@@ -1,0 +1,7 @@
+package test240802.object1;
+
+public class fileSaves {
+	public void fileSave(String) {
+		
+	}
+}

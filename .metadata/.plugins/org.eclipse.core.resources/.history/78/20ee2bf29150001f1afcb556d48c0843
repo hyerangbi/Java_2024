@@ -1,0 +1,46 @@
+package test240802.object1;
+
+public class testClient {
+	public void client(){
+		int port = 3000;
+
+		String serverIP;
+
+		try{
+
+		serverIP = InetAddress.getLocalHost().getHostAddress();
+
+
+
+		Socket socket = new Socket(serverIP, port);
+
+		}
+
+		}
+
+
+
+		public void server(){
+
+		int port = 3000;
+
+
+
+		ServerSocket server;
+
+		try{
+
+		server = new ServerSocket(port);
+
+
+
+		while(true){
+
+		Socket client = server.accept();
+
+		}
+
+		}
+	
+	
+}

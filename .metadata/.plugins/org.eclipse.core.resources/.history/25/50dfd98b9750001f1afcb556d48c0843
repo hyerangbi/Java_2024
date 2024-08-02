@@ -1,0 +1,26 @@
+package test240802.object1;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+
+public class fileSaves {
+	public void fileSave(String fileName) {
+		
+		File file = new File("fileName.txt");
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		try {
+			br.read();
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+		}
+		
+		
+		
+		
+	}
+}

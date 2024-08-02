@@ -1,0 +1,10 @@
+package q.thread.chat;
+
+import java.net.Socket;
+
+public class TCPClient {
+	
+	public static void main(String[] agrs) {
+		Socket socket = new Socket("localhost", 3000);
+	}
+}

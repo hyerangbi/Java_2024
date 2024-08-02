@@ -1,0 +1,13 @@
+package test240802.object1;
+
+import java.net.ServerSocket;
+
+public class testServer {
+	int port = 3000;
+	
+	ServerSocket server;
+	
+	server = new ServerSocket(port);
+	
+	
+}

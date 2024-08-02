@@ -1,0 +1,19 @@
+package o.collection.list;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class GenericListRun {
+	
+	public static void main(String[] args) {
+		List<Music> Music = new ArrayList<>();
+		
+		list.add(new Music("Love story", "볼사"));
+		list.add(new Music("노래","가수"));
+		list.add(new Music("가을아침","아이유"));
+		list.add(new Music("김사월","프라하"));
+		
+		System.out.println(list);
+	
+	}
+}

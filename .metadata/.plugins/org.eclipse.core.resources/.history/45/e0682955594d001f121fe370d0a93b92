@@ -1,0 +1,10 @@
+package o.collection.map;
+
+public class MapRun {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

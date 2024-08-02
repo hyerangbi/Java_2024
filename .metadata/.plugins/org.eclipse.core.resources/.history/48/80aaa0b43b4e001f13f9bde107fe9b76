@@ -1,0 +1,19 @@
+package p.network;
+
+import java.net.InetAddress;
+import java.util.Scanner;
+
+public class UDPClient {
+	public static void main(String[] agrs) {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("보낼메시지 : ");
+		String msg = sc.nextLine();
+		
+		InetAddress inet;
+		int port = 4000;
+		
+		
+		
+	}
+}
