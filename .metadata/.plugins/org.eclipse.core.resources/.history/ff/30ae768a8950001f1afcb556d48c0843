@@ -1,9 +1,0 @@
-package test240802.object1;
-
-import java.net.Socket;
-
-public class TCPClient {
-	private Socket socket;
-	
-	
-}

@@ -1,8 +1,0 @@
-package p.network;
-
-public class UDPClient {
-	public static void main(String[] agrs) {
-		
-		int port 4000;
-	}
-}

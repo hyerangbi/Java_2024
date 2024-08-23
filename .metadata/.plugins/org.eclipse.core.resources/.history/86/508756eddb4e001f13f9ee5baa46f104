@@ -1,8 +1,0 @@
-package q.thread.ex2;
-
-public class Run {
-	public static void main(String[] agrs) {
-		Task1 t1 = new Task1();
-	}
-
-}
