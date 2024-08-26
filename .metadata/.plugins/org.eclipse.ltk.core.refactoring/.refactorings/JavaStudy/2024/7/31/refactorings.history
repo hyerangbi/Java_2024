@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename type &apos;o.collection.set.Run&apos; to &apos;SetRun&apos;&#x0D;&#x0A;- Original project: &apos;JavaProject&apos;&#x0D;&#x0A;- Original element: &apos;o.collection.set.Run&apos;&#x0D;&#x0A;- Renamed element: &apos;o.collection.set.SetRun&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Run&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;o.collection.set{Run.java[Run" matchStrategy="1" name="SetRun" qualified="false" references="true" similarDeclarations="false" stamp="1722219946855" textual="false" version="1.0"/>
-</session>
