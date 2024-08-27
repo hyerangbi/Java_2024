@@ -1,13 +1,10 @@
 package view;
 
-import java.util.Scanner;
-
-public class Place extends MainMenu{
-	private Scanner sc = new Scanner(System.in);
-	
-	public void house() {
-		System.out.println("");
-		
-		
+public class Place {
+	private MainMenu mm;
+	public void first() {
+		System.out.println("아직 갈 곳이 없습니다. 되돌아갑니다");
+		mm.mainMenu();
 	}
+
 }

@@ -48,10 +48,8 @@ public class Tool{
 	
 	@Override
 	public String toString() {
-		return "tool [toolNo=" + toolNo + ", toolName=" + toolName + ", toolDe=" + toolDe + "]";
+		return "toolNo=" + toolNo + "\ntoolName=" + toolName + "\ntoolDe=" + toolDe;
 	}
-	
-	
 	
 	
 	

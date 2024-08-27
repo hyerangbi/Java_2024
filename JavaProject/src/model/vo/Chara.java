@@ -1,7 +1,6 @@
 package model.vo;
 
-public class Chara extends Tool{
-	private int charaNo;
+public class Chara extends Tool{	
 	private String chaName;
 	private String chaTool;
 	private String job;	
@@ -10,27 +9,28 @@ public class Chara extends Tool{
 	public Chara() {
 		super();
 	}
+	
+	
+	public Chara(String job, String status) {
+		super();
+		this.job = job;
+		this.status = status;
+	}
+
+
 
 	public Chara(String chaName) {
 		super();
 		this.chaName = chaName;
 		}
 
-	public Chara(int charaNo, String chaName, String chaTool, String job, String status) {
-		super();
-		this.charaNo = charaNo;
+
+	public Chara(String chaName, String chaTool, String job, String status) {
+		super();		
 		this.chaName = chaName;		
 		this.chaTool = chaTool;
 		this.job = job;
 		this.status = status;
-	}
-	
-	public int getCharaNo() {
-		return charaNo;
-	}
-
-	public void setCharaNo(int charaNo) {
-		this.charaNo = charaNo;
 	}
 
 	public String getChaName() {
@@ -66,10 +66,9 @@ public class Chara extends Tool{
 	}
 	
 	
-	
 	@Override
 	public String toString() {
-		return "이름 : " + this.chaName + ", \n나이 :" + "\n도구 :" + this.chaTool
+		return "이름 : " + this.chaName + "\n도구 : " + this.chaTool
 				+ "\n직업 : " + this.job + "\n상태 : " + this.status ;
 	}
 	

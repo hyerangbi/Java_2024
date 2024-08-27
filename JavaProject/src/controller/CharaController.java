@@ -4,58 +4,69 @@ import model.vo.Chara;
 import model.vo.Tool;
 
 public class CharaController {
+	private Chara c = new Chara();
 	
-	public Chara insertName(String chName){
-		Chara cha = new Chara(chName);
-		
-		return cha;
+	public String checkChName() {
+		return c.getChaName();
 	}
 	
-	public Chara insertJob(Chara cJob) {
-		Chara job = new Chara();
-		int type = (int)(Math.random() * 1);
+	public void insertName(String chName){
+		c.setChaName(chName);		
+	}
 	
-		switch(type){
-			case 0:
-				job.setJob("백수");
+	public Chara insertJob() {
+		
+		int jobtype = (int)(Math.random() * 2);
+		int stattype = (int)(Math.random() * 2);
+	
+		switch(jobtype){
+			case 0:				
+				c.setJob("사람");		
 				break;
 			case 1:
-				job.setJob("눈사람");
+				c.setJob("눈사람");
+				break;
+			case 2:
+				c.setJob("슬라임");
 				break;
 			default:
-				System.out.println("?");
+				c.setJob("알 수 없음");
 		}
-		return job;
-	}
-	
-	public void insertStatus(int chStat) {
-		Chara c = new Chara();
-		String status = null;
-		int type = (int)(Math.random() * 1);
 		
-		switch(type){
-			case 0:
-				status = "평온";				
+		switch(stattype){
+			case 0:				
+				c.setStatus("평온");		
 				break;
 			case 1:
-				status = "졸림";
+				c.setStatus("졸림");
+				break;
+			case 2:
+				c.setStatus("배고픔");
 				break;
 			default:
-				System.out.println("?");
-		}
+				c.setStatus("알 수 없는 상태");
+		}				
 		
+		return c;
 	}
+	
 	
 	public String insertTool(Tool toolName) {
-		Tool t = new Tool();
-		Chara c = new Chara();
-		
+	
 		c.setChaTool(null);
 		
 		return null;
 	}
 	
-	public boolean delete (Chara c) {
-		return false;
+	public Chara reset() {
+		c.setChaName(null);		
+		c.setJob(null);
+		c.setStatus(null);
+		return c;
+	}
+	
+	public void informCharaStat() {
+		
+		System.out.println(c.toString());
 	}
 }
