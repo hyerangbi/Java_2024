@@ -25,4 +25,6 @@
     <fullyQualifiedTypeName name="java.util.Objects"/>
     <fullyQualifiedTypeName name="java.util.Iterator"/>
     <fullyQualifiedTypeName name="java.util.Map.Entry"/>
+    <fullyQualifiedTypeName name="model.vo.Chara"/>
+    <fullyQualifiedTypeName name="controller.CharaController"/>
 </qualifiedTypeNameHistroy>

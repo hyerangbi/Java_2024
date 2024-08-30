@@ -40,6 +40,8 @@
 		<item key="WizardZipFileResourceExportPage1.STORE_CREATE_STRUCTURE_ID" value="false"/>
 		<item key="WizardZipFileResourceExportPage1.STORE_COMPRESS_CONTENTS_ID" value="true"/>
 		<list key="WizardZipFileResourceExportPage1.STORE_DESTINATION_NAMES_ID">
+			<item value="D:\모르겠따.zip"/>
+			<item value="D:\jinjahaeyahea.zip"/>
 			<item value="D:\240802.zip"/>
 			<item value="D:\JavaStudy.zip"/>
 		</list>
