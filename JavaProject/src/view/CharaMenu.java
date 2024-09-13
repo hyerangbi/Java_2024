@@ -12,10 +12,11 @@ public class CharaMenu {
 	
 	private ToolController tc;
 	
-	public CharaMenu(CharaController cc, Scanner sc) {
+	public CharaMenu(CharaController cc, Scanner sc, ToolController tc) {
 		super();
 		this.cc = cc;
 		this.sc = sc;
+		this.tc = tc;
 	}
 
 	public void CharaMenus() {
@@ -36,7 +37,7 @@ public class CharaMenu {
 				this.charaInform();
 				break;
 			case 2:
-				this.informTool();
+				this.toolInform();
 				break;
 			case 0:
 				return;
@@ -50,7 +51,9 @@ public class CharaMenu {
 		cc.informCharaStat();
 	}
 	
-	public void informTool() {
+	public void toolInform() {
 		tc.informTool();
 	}
+	
+	
 }

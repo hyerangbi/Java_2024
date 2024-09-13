@@ -48,7 +48,7 @@ public class Tool{
 	
 	@Override
 	public String toString() {
-		return "toolNo=" + toolNo + "\ntoolName=" + toolName + "\ntoolDe=" + toolDe;
+		return "toolName=" + toolName + "\ntoolDe=" + toolDe;
 	}
 	
 	

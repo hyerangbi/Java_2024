@@ -2,17 +2,22 @@ package view;
 
 import java.util.Scanner;
 
+import javax.tools.Tool;
+
 import controller.CharaController;
+import controller.ToolController;
+import controller.ToolSelector;
 import model.vo.Chara;
 import view.CharaMenu;
 
 public class MainMenu {
 	private Scanner sc = new Scanner(System.in);
 	private CharaController cc = new CharaController();
+	private ToolController tc = new ToolController();
+	private ToolSelector tr = new ToolSelector();
 	
-	
-	public void mainMenu() {
-		
+
+	public void mainMenu() {		
 		// (아무런 설정이 없는 경우) 맨 처음 켰을 때 뜨는 메뉴		
 		if(cc.checkChName() == null) {
 			System.out.println("■ · . (۶•̀ᴗ•́)۶ \' 。·");
@@ -54,9 +59,9 @@ public class MainMenu {
 		String chName = sc.nextLine();
 		cc.insertName(chName);
 		cc.insertJob();
+		Tool randomTool = ToolSelector.getRandomTool(tc.getToolList());
+				
 	}
-	
-	
 	public void userMenu() {
 		int menu = 0;
 		
@@ -69,8 +74,7 @@ public class MainMenu {
 			System.out.println("| 0. 기본 메뉴로 돌아가기");
 			System.out.print("■ 메뉴 입력 : ");
 			menu = sc.nextInt();
-			
-			
+						
 			switch(menu) {
 			case 1: // 캐릭터 정보
 				this.charList();
@@ -93,7 +97,7 @@ public class MainMenu {
 	}
 	
 	public void charList() {		
-		new CharaMenu(cc, sc).CharaMenus();
+		new CharaMenu(cc, sc, tc).CharaMenus();
 	}
 	
 	public void charReset() {
