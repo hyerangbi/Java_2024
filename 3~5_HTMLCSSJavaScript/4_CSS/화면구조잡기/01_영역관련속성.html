@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing: border-box;            
+        }
+
+        .test{
+            border: 1px solid lightpink;
+
+            width: 350px;
+            height: 150px;
+
+            padding: 10px;
+
+            margin: 30px;
+        }
+
+        .wrap{
+            border: 5px solid lightcyan;
+            width: 400px;
+            height: 200px;
+        }
+
+        .test1, .test2{
+            border:5px solid lightblue;
+            width: 100%;
+        }
+
+        .test1{
+            height: 60%;
+        }
+
+        .test2{
+            height: 40%;
+        }
+
+        .test3, .test4{
+            border: 5px solid lightblue;
+            height: 100%;
+            display: inline-block;
+            float: left;
+        }
+
+        .test3{
+            width: 40%;
+        }
+
+        .test4{
+            width: 60%;
+        }
+    </style>
+
+</head>
+<body>
+    <h1> 🌺 영역관련속성 </h1>
+    <div class="test">
+        <br>
+        1) content : 요소 내의 내용을 작성하는 영역 <br>
+        2) border : 요소 내의 테두리 영역 <br>
+        3) padding : content 와 border 사이의 여백 <br>
+        4) margin : 요소의 바깥 쪽 영역 <br>
+    </div>
+
+    <h2> div 안에 또 다른 여러 개의 div 를 넣는 연습</h2>
+
+    <h3> 상하 2등분하기 </h3>
+    <div class="wrap">
+        <div class="test1"></div>
+        <div class="test2"></div>
+    </div>
+
+    <h3> 좌우 2등분하기 </h3>
+    <div class="wrap">
+        <div class="test3"></div>
+        <div class="test4"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>AJAX</title>
+ 	
+	<!-- font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap" rel="stylesheet">
+
+	<!-- jQuery -->
+    <script 
+        src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+        crossorigin="anonymous"></script>
+    <script
+        src="https://code.jquery.com/ui/1.14.0/jquery-ui.min.js"
+        integrity="sha256-Fb0zP4jE3JHqu+IBB9YktLcSjI1Zc6J2b6gTjB0LpoM="
+        crossorigin="anonymous"></script>
+	
+	<style>
+		body{
+			margin: 0px;
+			box-sizing: border-box;			
+			font-family: "Poor Story", system-ui;
+			font-weight: 400;
+			font-style: normal;
+		}
+		h1{
+			background: #a7cbfa;			
+			font-size: 48px;
+			font-weight: 700;
+		}
+		h2{	
+			background: #e4eefc;
+			border-radius: 50px;
+			height: 60px;
+			color: #ff8398;
+			font-size: 36px;
+			padding-left: 20px;			
+		}
+		h3{
+			font-size: 24px;
+		}
+		ul{			
+			color : #346297;
+			list-style: square;
+			font-size: 27px;
+		}
+		b{
+			border-top: 3px solid;
+			border-bottom: 3px solid;			
+			padding-top: 10px;
+			padding-bottom: 10px;
+
+		}
+		input{			
+			height: 27px;
+			border: none;
+			border-left: 3px solid;
+			border-right: 3px solid;
+			text-align: center;
+			background: white;
+		
+		}
+		input::placeholder{
+			font-family: "Poor Story", system-ui;
+			font-weight: 400;
+			font-style: normal;
+			font-size: 20px;			
+		}
+
+		.title >ul{
+			list-style: none;
+		}
+
+		.detail{
+			padding-left: 50px;
+			padding-right: 50px;
+		}
+		.description{
+			font-size: 20px;
+		}
+		.ajaxDetail{
+			font-size: 24px;
+		}
+	
+		.userInformation>span{			
+			background: #777777;
+			font-size: 24px;	
+		}	
+
+		
+	</style>
+</head>
+<body>	
+	<div class="title">
+		<h1 align="center">AJAX</h1>
+		<ul>
+			<li>서버로부터 데이터를 가져와 전체페이지를 새로고침 하지않고 일부만 로드할 수 있게 하는 기법</li>
+			<li>우리가 기존에 사용하던 a태그 form submit 요청방식은 "동기화 요청"이다. ➡ 응답페이지가 돌아와야만 화면을 볼 수 있다. (플리커 현상)</li>			
+		</ul>
+	</div>
+	
+	<div class="detail">
+		<h2>🍀 동기식(a, form submit)</h2>
+		<p>				
+			<ul>
+				<li>요청 처리 후 해당하는 응답 페이지가 돌아와야 다음 작업 가능</li>
+				<li>서버에 요청한 결과까지의 시간이 지연되면 무작정 계속 기다려야 한다. (흰 페이지)</li>
+				<li>전체 페이지를 응답해주기 때문에 기본적으로 플리커현상 발생</li>
+			</ul>
+		</p>		
+		<h2>🍀 비 동기식(ajax)</h2>
+		<p>
+			<ul>
+				<li>현재 페이지를 그대로 유지하면서 중간마다 추가적으로 필요한 정보를 요청할 수 있다.</li>
+				<li>요청을 보냈다고 해서 다른 페이지로 넘어가지 않는다.</li>
+				<li>요청을 보내고도 그에 해당하는 응답이 돌오기 전에 다른 작업을 진행할 수 있다.</li>
+			</ul>
+		</p>
+		<b>ex) 실시간검색어, 검색자동완성, 아이디 중복체크, 찜하기/해제, 추천, 댓글, 무한스크롤</b>
+		<h2>❗ 비 동기식 단점</h2>			
+		<p>
+			<ul>
+				<li>현재 페이지에서 지속적으로 리소스가 쌓인다 -> 페이지가 느려질 수 있다</li>
+				<li>에러 발생 시 디버깅이 어렵다.</li>
+				<li>요청 처리 후에 돌아온 응답데이터를 가지고 현재 페이지에 새로운 요소를 만들어서 붙여줘야한다.
+					-> dom을 개발자가 직접 컨트롤 해야한다.</li>
+			</ul>
+		</p>			
+		<div class="description">AJAX 구현 -> javascript방식(XmlHttpRequest) vs jQuery방식(코드가 간결하고 사용하기 쉽다.)</div>
+
+		<h2>☁ jQuery방식</h2>
+		<div class="ajaxDetail">
+			$.ajax({ <br>
+			&emsp;속성 : 값, <br>
+			&emsp;속성 : 값, <br>
+			&emsp;속성 : 값, <br>
+			&emsp;...
+			});
+		</div>
+		<h2>🍀 주요속성</h2>
+		<div>
+			<ul>
+				<li>url: 요청할 url(필수속성)</li>
+				<li>type|method : 요청전송방식(get/post)</li>
+				<li>data: 요청시 전달할 값</li>
+				<li>success: ajax요청 성공시 실행할 함수정의</li>
+				<li>error : ajax요청 실패시 실행할 함수정의</li>
+				<li>complete : ajax요청 성공여부와 상관없이 무조건 실행할 함수</li>
+			</ul>
+		</div>
+		<h2>🍀 부가적인 속성</h2>
+		<div>
+			<ul>
+				<li>sync: 서버와의 비 동기 처리 방식 설정 여부(기본값 true)</li>
+				<li>contentType: request의 데이터 인코딩 방식 정의(보내는 쪽의 데이터 인코딩)</li>
+				<li>dataType: 서버에서 response로 오는 데이터의 데이터 형 설정, 값이 없다면 스마트하게 판단함</li>
+				<div class="description">xml, json, script, html, text</div>
+				<li>accept: 파라미터의 타입을 설정(사용자 특화 된 파라미터 타입 설정가능)</li>
+				<li>beforeSend: ajax요청을 하기전 실행되는 이벤트 callback 함수(데이터 가공 및 header관련 설정)</li>
+				<li>cache: 요청 및 결과 값을 scope에서 갖고 있지 않도록 하는 것 (기본값true)</li>
+				<li>contents: jQuery에서 response의 데이터를 파싱하는 방식 정의</li>
+				<li>context: ajax 메소드 내 모든 영역에서 파싱방식 정의</li>
+				<li>crossDomain: 타 도메인 호출 가능 여부 설정(기본값 false)</li>
+				<li>dataFilter: response를 받았을 때 정상적인 값을 return할 수 있도록 데이터와 데이터타입 설정</li>	
+				<li>timeout: 서버요청 시 응답대기시간</li>
+			</ul>
+		</div>
+		
+		<h3>버튼 클릭시 post방식으로 서버에 여러 개의 데이터 전송 및 응답</h3>
+		<div class="userInformation">
+			<span>이름 </span><input type="text" id="input1" placeholder="이름">
+			<span>나이 </span><input type="text" id="input2" placeholder="나이">
+			<button onclick="test();">전송</button>
+		</div>
+		<div>
+			<ul id="member-area">
+
+			</ul>
+		</div>
+	</div>
+	
+	<script>
+		function test(){
+			//  http://locahost:8888/jsp/jqAjax.do 로 보낼 것이다.
+			$.ajax({
+				type : "post",
+				url : "http://locahost:8888/jsp/jqAjax.do",
+				data : {
+					name : $("#input1").val(),
+					age : document.querySelector("#input2").value
+				},
+				success : function(result){
+					let memberList = JSON.parse(result);
+					const memberZone = document.getElementById('member-area');
+					for(let m of memberList){
+						memberZone.innerHTML += ("<li>" + m.userNo + " " + m.userName + " " + m.phone +"</li>")
+					}
+				},
+				error : function(){
+					console.log("요청실패");
+				}
+			})
+		}
+	</script>
+
+</body>
+<footer>
+	<br>
+	<hr>
+	<br>
+</footer>
+</html>

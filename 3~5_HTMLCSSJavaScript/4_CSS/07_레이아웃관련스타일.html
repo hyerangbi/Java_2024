@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>레이아웃 스타일</title>
+
+    <style>
+        .size-test{
+            border : 1px solid skyblue;
+        }
+
+        #test1{width: 400px; height: 200px;}
+        #test2{width: calc(100%-100px); height: 150px;}
+
+        .display-test{
+            border:1px solid lightblue;
+            width: 150px;
+            height: 150px;
+        }
+
+        .lavenderblush{background-color: lavenderblush;}
+        .lavender{background-color: lavender;}
+        .ivory{background-color: ivory;}
+
+        .inline{display: inline;}
+        .inline-block{display: inline-block;}
+        .block{display: block;}
+    </style>
+
+
+</head>
+<body>
+    <!--
+        블럭요소 : 한 줄로 영역을 차지하고 있는 요소 / 줄바꿈 발생 (div, p, pre, h)
+        인라인 요소 : content 부분만 영역을 차지하고 있는 요소 / 옆으로 다른 요소가 올 수 있다.(span, label, input, img, 글자 ...)
+
+        🌸 요소 : content + padding + border
+        요소 바깥 쪽 영역 : margin 
+    -->
+
+    <h1> 🌸 레이아웃 관련 스타일 (◞˃ᆺ˂)◞ </h1>
+    <h3> width, height </h3>
+    <p> 기본적으로 내용을 차지하고 content 영역의 가로, 세로 길이를 조정하는데 사용하는 스타일</p>
+
+    <h4> 고정크기 (px) </h4>
+    <div id="test1" class="size-test"></div>
+
+    <h4> 가변크기 (%) </h4>
+    <div id="test2" class="size-test"></div>
+
+    <!-- calc(xx%- xxpx) -->
+    <br>
+    <hr>
+
+    <h3> ◾ display : 화면 배치 방법 변경 </h3>
+    
+    <pre>
+        선택자{
+            display : inline | block | inline-block
+        }
+    </pre>
+
+    <h4> 🔷 display : inline </h4>
+
+    <div class="display-test lavenderblush inline"> 첫번째 </div>
+    <div class="display-test lavender inline"> 두번째 </div>
+    <div class="display-test ivory inline"> 세번째 </div>
+
+    <br><br>
+
+    <div class="display-test lavenderblush block"> 첫번째 </div>
+    <div class="display-test lavender block"> 두번째 </div>
+    <div class="display-test ivory block"> 세번째 </div>
+
+    <br>
+
+    <div class="display-test lavenderblush inline-block"> 첫번째 </div>
+    <div class="display-test lavender inline-block"> 두번째 </div>
+    <div class="display-test ivory inline-block"> 세번째 </div>
+
+    <br>    
+    <hr>
+    <br>
+</body>
+</html>

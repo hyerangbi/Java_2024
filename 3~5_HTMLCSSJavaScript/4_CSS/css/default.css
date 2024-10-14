@@ -1,0 +1,117 @@
+/* css 영역 */
+
+/* 1. 속성 선택자 -------------------------------------------*/
+/* div요소들 중 name 속성 값이 name1과 "일치"하는 요소 */
+div[name=name1]{
+    background-color: deepskyblue;
+}
+
+/* div요소들 중 name 속성 값에 name1 "포함"되어 있는 요소 (키워드x) */
+div[name~=name1]{
+    background: yellowgreen;
+}
+
+/* div요소들 중 class 속성 값이 class로 "시작"되는 요소 (-으로 구분) */
+div[class |= class]{
+    background: skyblue;
+}
+
+/* div요소들 중 name 속성 값이 na로 "시작"하는 요소 */
+div[name ^= na]{
+    background: honeydew;
+}
+
+/* div요소들 중 class속성 값이 ss로 "끝"나는 요소 */
+div[class$=ss]{
+    background: powderblue;
+}
+
+/* div요소드 중 class속성 값에 i가 "포함"되어 있는 요소 */
+div[class *= i]{
+    background: gainsboro;
+}
+
+/* 문제 : class 속성 값이 div-class인 요소들 중에서 name 속성 값에 
+name3 가 포함된 요소 ( 배경 : pink ) */
+
+.div-class[name~=name3]{
+    background-color: pink;
+}
+
+/* 2. 자손 선택자와 후손 선택자 ---------- */
+/* a>b : a 요소의 자손들 중에서 b요소만 전부 선택 */
+
+/* 아이디가 test1인 요소들의 자손들 중 h4만 선택 */
+#test1> h4{
+    background-color: lightblue;
+}
+
+#test1>ul>li{
+    background-color: yellowgreen;
+}
+
+/* a b : a요소의 후손들 중에서 b 요소 전부 선택 */
+#test1 li{
+    color: lemonchiffon; 
+}
+
+/* 3. 동위선택자 */
+#test2+div{
+    background-color: cornsilk;
+}
+
+#test2+ul{
+    background-color: azure;
+} /* 바로 뒤에 있는 요소가 아니기 때문에 선택x */
+
+/*
+#test~div{
+    background-color: darkseagreen;
+}
+    */
+
+#test2+ul{
+    background-color: rgb(83, 216, 216);
+}
+
+/* 4. 반응 선택자 ----------- */
+.area{
+    background-color: yellowgreen;
+    width: 100px;
+    height : 100px;
+cursor : point;
+}
+
+#active-test:active{
+    background-color: deepskyblue;
+    color:aliceblue;
+}
+
+#hover-test:hover{
+    background-color: lavender;
+    color: aliceblue;
+    scale:0.98
+}
+
+/* 5. 상태선택자 */
+input[type=checkbox]:checked-{
+    width: 20px;
+    height: 20px;
+}
+
+input[type-checkbox]:check_labal{
+    font-size: 20px;
+}
+
+input[name^=user]:focus{
+    background-color: pink;
+}
+
+button:enabled{
+    background-color: rgb(255, 175, 208);
+}
+
+button:disabled{
+    background-color: paleturquoise;
+    opacity: 0.50;
+}

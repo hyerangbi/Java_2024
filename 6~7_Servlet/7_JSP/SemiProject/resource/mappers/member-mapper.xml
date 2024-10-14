@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="memberMapper">
+	<resultMap type="Member" id="memberResultSet">
+	<!-- <result column="테이블 컬럼명" property="객체의 필드명"/> -->
+		<result column="USER_ID" property="userId" />
+		<result column="USER_PWD" property="userPwd" />
+		<result column="USER_NAME" property="userName" />
+		<result column="GENDER" property="gender" />
+		<result column="USER_EMAIL" property="email" />
+		<result column="USER_PHONE" property="phone" />
+		<result column="USER_ENROLL_DATE" property="userEnrollDate"/>
+		<result column="USER_ADDRESS" property="address" />		
+		<result column="USER_BIRTHDAY" property="birthday" />		
+		<result column="USER_ENROLL_DATE" property="userEnrollDate" />
+		<result column="USER_GRADE" property="grade" />
+		<result column="GRADE_ADMIN" property="admingrade" />
+		<result column="USER_COIN" property="userCoin" />
+		<result column="USER_DELETE_DATE" property="deleteDate" />
+		<result column="USER_DELFLAG" property="delFlag" />
+	</resultMap>
+	
+	<!-- 로그인 -->
+	<select id="loginMember" parameterType="Member" resultMap="memberResultSet">
+        SELECT USER_ID,
+               USER_PWD,
+               USER_NAME,
+               GENDER,
+               USER_BIRTHDAY,
+               USER_EMAIL,
+               USER_PHONE,
+               USER_ENROLL_DATE,
+               USER_DELFLAG,
+               USER_DELETE_DATE,
+               USER_GRADE,
+               USER_ADDRESS,
+               GRADE_ADMIN,
+               USER_COIN
+        FROM MEMBER
+        WHERE USER_ID = #{userId}
+          AND USER_PWD = #{userPwd}
+    </select>
+	
+	<!-- 회원가입 -->
+	<insert id="insertMember" parameterType="Member">
+		INSERT
+	  	INTO MEMBER
+	  	(
+	  		USER_ID,
+	  		USER_PWD,
+	  		USER_NAME,
+	  		GENDER,	  		
+	  		USER_EMAIL,	  				
+	  		USER_ADDRESS,
+	  		USER_PHONE,
+	  		USER_BIRTHDAY        		
+	  			  		
+	  	)
+	  	VALUES
+	  	(
+	  		#{userId},
+	  		#{userPwd},
+	  		#{userName},
+	  		#{gender},	  		  		
+	  		#{email},
+	  		#{address},
+	  		#{phone},
+	  		#{birthday}        	
+	  	)
+	</insert>
+	
+	<select id="selectAllMembers" resultMap="memberResultSet">
+    SELECT USER_ID,
+           USER_PWD,
+           USER_NAME,
+           GENDER,
+           USER_BIRTHDAY,
+           USER_EMAIL,
+           USER_PHONE,
+           USER_ENROLL_DATE,
+           USER_DELFLAG,
+           USER_DELETE_DATE,
+           USER_GRADE,
+           USER_ADDRESS,
+           GRADE_ADMIN,
+           USER_COIN
+    FROM MEMBER
+	</select>
+	
+	<!-- 회원탈퇴 -->
+	<update id="deleteMember"  parameterType="Member">
+		UPDATE MEMBER
+		   SET USER_DELFLAG = 'Y'
+		   SET USER_DELETE_DATE = SYSDATE
+		 WHERE USER_ID = #{userId}
+		   AND USER_PWD = #{userPwd}
+		   AND USER_NAME = #{userName}
+		   AND USER_BIRTHDAY = #{birthday}   
+	</update>
+	
+	<!-- 아이디 중복확인 -->
+	<select id="checkId" resultType="_int">
+		SELECT count(*)
+		  FROM MEMBER
+		 WHERE USER_ID = #{userId}
+	</select>
+</mapper>

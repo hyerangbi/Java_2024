@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .area{
+            border: 1px solid black;
+            width: 500px;
+            height: 100px;
+            background: gainsboro;
+        }
+    </style>
+</head>
+<body>
+    <h1> 함수 (function) </h1>
+
+    <h3 onclick="test1()"> 🌟 선언적 함수</h3>
+
+    <pre>
+        function 함수명 ( [매개변수, 매개변수 ... ] ){
+            함수 호출 시 실행할 코드;
+
+            [return 결과 값;]
+        }
+    </pre>
+
+    <button onclick="test1()"> 실행확인 </button>
+    <div id="area1" class="area"></div>
+
+    <script>
+        function test1(){
+            document.querySelector("#area1").innerHTML += "test1() 함수 실행됨<br>";
+        }
+    </script>
+
+    <br>
+
+    <h3> 🌟 익명함수 </h3>
+    <pre>
+        변수 | 속성 = function([매개변수 ...]){
+            함수 호출 시 실행할 코드;
+
+            [return 결과 값;]
+        }
+    </pre>
+
+    <button id="btn"> 실행확인 </button>
+    <div id="area2" class="area"></div>
+
+    <script>
+       // let testFunk = function(){
+            //document.getElementById("area2").innerHTML += "익명함수로 실행 <br>";
+        //}
+
+        const btn = document.getElementById("btn");
+        btn.onclick = function(){
+            // 이벤트 속성에 대입되는 function -> 이벤트 핸들러
+            document.getElementById("area2").innerHTML += "이벤트 핸들러로 실행 <br>";
+        }        
+    </script>
+
+    <hr>
+
+    <h2> 함수의 매개변수 </h2>
+    
+    <button onclick="test2('ㅇㅅㅇ',15)"> 실행확인 </button>
+    <button onclick="test2('ㅇㅁㅇ')"> 실행확인 </button>
+    <button onclick="test2()"> 실행확인 </button>
+    <button> 실행확인 </button>
+    <button onclick="text('ㅇㅅㅇ',15,'읭')"> 실행확인 </button>
+    <button onclick="text('ㅇㅅㅇ',15,'읭', null)"> 실행확인 </button>
+    <br>
+
+    <div id="area3" class="area"></div>
+    <script>
+        function test2(value1, value2){
+            console.log(arguments) // 함수 호출 시 전달되는 값은 내부적으로 arguemnets에 담겨있다.
+            document.getElementById("area3").innerHTML = value1 + " " + value2;
+        }
+    </script>
+
+    <br>
+
+    <h2> 함수를 매개변수로 활용 </h2>
+
+    <script>
+        function sendUserInfo(userInfo, callBack){ // 서버측으로 데이터를 전송하는 함수
+            
+            //서버로 전송
+            // 결과가 로그인 성공
+            let user = {
+                name : "사용자",
+                age : 21,
+            }
+        }
+
+        let id = "user01";
+        let pwd = "pass01";
+
+        sendUserInfo({
+            userId : id,
+            userPwd : pwd
+        }, function(userInfo){
+            console.log(userInfo)
+            console.log("결제")
+        })
+    </script>
+
+    <br>
+
+    <!-- this : 현재 요소 객체 -->
+     <!-- inline에서 this 사용 시 사용한 태그요소를 객체로 전달 -->
+     <button onclick="test3(this)">1</button>
+     <button onclick="test3(this.innerHTML)">2</button>
+     <input type="button" value="3" onclick="test3(this.value)">
+     <button id="btn4" onclick="test3(this.id)">4</button>
+
+     <script>
+        function test3(tmp){
+            console.log(tmp)
+        }
+     </script>
+
+     <button onclick="test4(this)"> 클릭 </button>
+     <script>
+        function test4(btn){
+            if(btn.style.background !== "skyblue"){
+                btn.style.background = "skyblue";
+                btn.innerHTML = "클릭됨"
+            } else{
+                btn.style.background = "white";
+                btn.innerHTML = "클릭"
+            }
+        }
+     </script>
+
+     <br><br>
+     
+     <h2> 함수의 리턴 </h2>
+     <h3> 🌟 일반적인 값 리턴 </h3>
+
+     <button onclick="test5()"> 실행 </button>
+     <div id="area5" class="area"></div>
+
+     <script>
+        function ran(){
+            const random = parseInt(Math.random() * 100 + 1)
+            return random ;
+        }
+
+        function test5(){
+            document.querySelector("area5").innerHTML += (("랜덤 값 : " + ran()) + "<br>");
+        }
+     </script>
+     <br>
+
+     <h3>🌟 함수를 리턴 </h3>
+     이름 : <input type="text" id="userName">
+     <button onclick="test6()()"> 실행 </button>
+
+     <script>
+        function test6(){
+            const inputEl = document.getElementById("user-name")
+
+            let alFunk = function(){
+                alert(inputEl.value)
+            }
+
+            return alFunk;
+        }
+     </script>
+
+     <br><br><br>
+</body>
+</html>

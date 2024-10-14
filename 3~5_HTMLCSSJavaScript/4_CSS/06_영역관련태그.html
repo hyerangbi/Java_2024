@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영역 관련 스타일</title>
+    <style>
+        body {
+            margin: 0px;
+        }
+        .test{
+            background-color: whitesmoke;
+            width: 100px;
+            height: 100px;
+            border: 5px solid skyblue;
+        }
+
+        #test1{ /* 사방으로 100px */
+            padding:100px; 
+        }
+
+        #test2{ /* 시계방향으로 주기 */
+            padding-top: 100px;
+            padding-right: 20px;
+            padding-bottom: 30px;
+            padding-left: 10px;
+        }
+
+        #test3{ 
+            padding: 100px 20px 30px 10px; /* 위 오른쪽 아래 왼쪽 순서대로 (위에서부터 시계방향)*/
+            padding: 100px 50px; /* 위 아래로 */
+        }
+
+        #test4{
+            margin : 50px;
+        }
+
+        #test5{
+            margin-top: 50px;
+            margin-left: 30px;
+            margin: 100px 30px 10px 10px;
+        }
+
+        #test6{
+            margin: auto;
+        }
+
+        #test7{
+            border: 1px solid powderblue;
+            border-width: 5px;
+            border-style: double;
+            border-color: lightpink;
+            border-left: 1px solid greenyellow;
+            border-right-color: lavender;
+        }
+
+        #test8{
+            width: 500px;
+            height: 500px;
+            border-width: 10px;
+            box-sizing: border-box;
+            background-color: lavenderblush;
+            background-image: url(https://i.namu.wiki/i/yv-CLEspILT8bYU_rbK5ubWOfv_KqanSAjXk9Cr6XQFxLjtaIvVH81Kz7_UpjgFvO87gquA1-BjWyNd4rRfvXlkP64RsOcFBwwIy3irlp5yZTRUTt3zJdozAld5L77YDPxmIVXrNtBGWpaLb5GeR0A.webp);
+            background-repeat: no-repeat; /* 배경이미지 반복 여부 */
+            background-size: 100px 100px; /* 배경이미지 크기 조절 */
+            background-position: 100px 70px; /* 배경 이미지 위치 조정 */
+        }
+    </style>
+</head>
+<body>
+    <h1> 🌸 여백 및 간격 관련 스타일 ⌯'▾'⌯ </h1>
+
+    <h2> 요소 영역 —→ content (내용) + padding(여백) + border(테두리) </h2>
+
+    <h4> ◾ 기존 div </h4>
+    <div class="test"> 기존 div </div>
+
+    <br>
+
+    <h3> ◾ padding </h3>
+    <p> : 내용물 영역 (content) 과 테두리영역(border) 사이의 거리를 조절하는 스타일 속성</p>
+
+    <br>
+
+    <div class="test" id="test1"> 컨텐츠 영역</div> <br>
+    <div class="test" id="test2"> 컨텐츠 영역</div> <br>
+    <div class="test" id="test3"> 컨텐츠 영역</div> <br>
+
+    <hr>
+    <br>
+
+    <h3> ◾ margin </h3>
+    <p> 타 요소들 간의 간격을 조정할 때 사용 ˶•⩊•˶ </p>
+    <!-- h태그와 p태그 같은 경우 마진이 기본적으로 있어서 둘 간격은 떨어져 있다. -->
+
+    <div class="test" id="test4"> 컨텐츠 영역 </div>
+    <div class="test" id="test5"> 컨텐츠 영역 </div>
+    <div class="test" id="test6"> 컨텐츠 영역 </div>
+
+    <hr>
+
+    <h3> ◾ 테두리 (*ゝω・)ﾉ </h3>
+    <div class="test" id="test7"> 테두리 (*ゝω・)ﾉ </div>
+
+    <hr>
+
+    <h3> 배경 관련 스타일 </h3>
+    <div class="test" id="test8"> ✧⁺ 배경이담 ⁺✧ . ' ✧⁺⸜(  •⌄•  )⸝⁺✧ </div>
+
+    <br>
+    <hr>
+    <br>
+</body>
+</html>

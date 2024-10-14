@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            border: 1px solid black;
+            background: black;
+            height: 100px;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h3> 문제1. 색상 선택 후 변경 버튼을 클릭하면 색상이 변경되도록 만들어라</h3>
+    <div id="div1"></div>
+
+    <input type="color" id="selectColor">
+    <button onclick="colorChange()"> 색상변경 </button>
+
+    <script>
+        function colorChange(){
+            const color = document.querySelector("#selectColor");
+            console.log(color.value)
+
+            const divEI = document.getElementById("div1");
+            divEI.style.background =color.value;
+            divEI.style.border=color.value;
+        }
+    </script>
+
+    <br>
+    <hr>
+
+    <h3> 문제2. 버튼에 따른 크기조절이 가능하게 만들어보세요.</h3>
+    <div id="div2"></div>
+    <button onclick="sSize">50X50</button>
+    <button onclick="mSize">100X100</button>
+    <button onclick="bSize">200X200</button>
+
+    <script>
+        function sSize(){
+            const size = document.querySelector();    
+            divEI.style.height = "50px";
+            divEI.style.weight = "50px";
+        }
+        function mSize(){
+            const size = document.querySelector();    
+            divEI.style.height = "100px";
+            divEI.style.weight = "100px";
+        }
+        function bSize(){
+            const size = document.querySelector();    
+            divEI.style.height = "200px";
+            divEI.style.weight = "200px";
+        }
+
+        function reSize(selector, width, height){
+            const divEI = document.querySelector(selector);
+            divEI.style.width = width;
+            divEI.style.height = height;
+        }
+    </script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url(../todolist/img/constellation-151062.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    font-size: 15px;
+    font-family: "Noto Sans KR", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+ul, li, oi{
+    list-style: none;
+}
+
+h1{
+    font-size: 50px;
+    font-weight: 900;
+    text-align: center;
+    margin: 0px;
+
+}
+.main{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main .container{
+    display: inline-flex;
+    justify-content: center;
+}
+
+.main #search-bar{
+    width: calc(100%-24px);
+    padding: 24px 0;
+}
+
+.main #search-bar > input{
+    min-width: 250px;
+    border-radius: 50px 0px 0px 50px;
+    background: #d4e5f3;
+    border: none;
+    outline: none;
+    height: 40px;
+    padding: 6px 12px;
+}
+
+.main #search-bar > button {
+    width: 40px;
+    background: #c8e0f7;
+    border-radius: 0px 50px 50px 0px;
+    border: none;
+    outline: none;
+}
+
+.todo-list{
+    width: 100%;
+    padding: 0px 30px;
+}
+
+.todo-list > li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 34px;
+    background: #cce5f0;
+    border-radius: 5px;
+    position: relative;
+    border: 1px solid whitesmoke;
+}
+
+.todo-list > li.done{
+    text-decoration : line-through;
+}
+
+.todo-list > li > .todo-remove-btn{
+    cursor : pointer;
+    width: 34px;
+    height: 34px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffc5cf;
+    border-radius: 0px 5px 5px 0px;
+    border: 1px solid whitesmoke;
+    position: absolute;
+    right: 0px;
+}

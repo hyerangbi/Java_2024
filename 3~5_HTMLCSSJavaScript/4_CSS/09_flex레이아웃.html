@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex</title>
+
+    <style>
+        .container{
+            border: 3px solid lavender;
+            display: flex;
+            flex-direction: row;
+            /* flex-direction : column(수직정렬) | column-reverse | row (수평) | row-reverse */
+            /* 자식요소들을 정렬할 때 어떤 기준으로 할 것인가 ? */
+        }
+
+        .flex-item{
+            color: black;
+            font-size: 50px;
+            padding: 24px;
+            text-align: center;
+            border : 1px solid gainsboro;
+            width: 100px;
+        }
+
+        .item1{background: aliceblue;}
+        .item2{background: rgb(215, 227, 250);}
+        .item3{background: mintcream;}
+        .item4{background: cornsilk;}
+        .item5{background: rgb(239, 230, 250);}
+        .item6{background: rgb(255, 226, 239);}
+
+        .container2{
+            border: 3px solid lavender;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            /* 주축의 정렬을 어떻게 할 것인가 */
+            justify-content: space-between;
+            /* 교차축의 정렬을 어떻게 할 것인가 */
+            align-items: center;
+        }
+
+        .flex-item2{
+            color:azure;
+            font-size: 50px;
+            padding: 24px;
+            text-align: center;
+            border: 1px solid black;
+            width: 100px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1> Flex 레이아웃 </h1>
+    <p> 🔵 웹페이지 레이아웃을 효율적으로 구성하기 위한 기술,
+        flexbox를 사용하면 요소들을 부모 컨테이너에서 유연하게 정렬하고
+    배치할 수 있다. </p>
+
+    <div class="container">
+        <div class="flex-item item1"> 1번 </div>
+        <div class="flex-item item2"> 2번 </div>
+        <div class="flex-item item3"> 3번 </div>
+    </div>
+
+    <br><br><br>
+
+    <div class="container2">
+        <div class="flex-item item1"> 1번 </div>
+        <div class="flex-item item2"> 2번 </div>
+        <div class="flex-item item3"> 3번 </div>
+        <div class="flex-item item4"> 4번 </div>
+        <div class="flex-item item5"> 5번 </div>
+        <div class="flex-item item6"> 6번 </div>
+    </div>
+</body>
+</html>

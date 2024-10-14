@@ -1,0 +1,71 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" import="java.util.ArrayList, com.kh.board.model.vo.Board" %>
+<%
+	ArrayList<Board> list = (ArrayList<Board>)request.getAttribute("list");
+%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style>
+    .outer{
+        background: black;
+        color: white;        
+        margin: auto;
+        margin-top: 50px;          
+    }
+    .list-area{
+        max-width: 850px;
+        margin: auto;
+    }
+    .thumbnail{
+        display: inline-block;
+        border: 1px solid white;
+        padding: 12px;
+        margin: 14px;
+        width: 252px;
+        box-sizing: border-box;
+    }
+    
+    .thumbnail p > span{
+        display: inline-block;
+        width: 220px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+</style>
+
+</head>
+<body>
+    <%@ include file="../common/menubar.jsp"%>
+
+    <div class="outer">
+        <br>
+        <h2 align="center">사진게시판</h2>
+        <br>
+        
+        <div class="list-area">
+            <% for(Board b : list) {%>
+            	<div class="thumbnail" align="center" onclick="clickBoard('<%=b.getBoardNo() %>')">
+            		<img src="<%=contextPath %>/<%=b.getTitleImg()%>" width="200px" height="150px" alt="썸네일이미지">
+                    <p>
+	                    <span>No. <%=b.getBoardNo() %> <%=b.getBoardTitle() %></span><br>
+	                    조회수 : <%=b.getCount() %>
+	                </p>
+            	</div>
+            	<%} %>     
+    	</div>
+    </div>    
+    <!-- jsp/detail.th -->
+    <script>
+    	function clickBoard(bno){
+    		location.href = "<%=contextPath %>/detail.th?bno=" + bno;
+    	}
+    </script>
+    
+    
+</body>
+</html>
