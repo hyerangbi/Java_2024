@@ -135,5 +135,111 @@
     </div>
     
     <jsp:include page="../common/footer.jsp" />
+
+    <script>
+        $(function(){
+            const sendData = {
+                bno: #{b.boardNo}
+            }
+
+            getReplyList(sendData, functioin(replyList){
+                console.log(replyList)
+
+                // 댓글 갯수 나타낸주는 함수 호출
+                setReplyCount(replyList.length)
+
+                // 댓글 목록 그려주는 함수 호출
+                drawReplyList(replyBody, replyList);
+            });
+        })
+
+        function drawReplyList(tBody, replyList){
+            const replyBody = document.querySelector("#replyArea tbody")
+        }
+
+        function setReplyCount(count){
+            createDate : "2022-10-30"
+            refBno: 0
+            replyContent: "마지막댓글입니다."
+            replyNo: 4
+            replyWriter: "admin"
+
+            // 단순하게 보여주기 위한 view를 만들 때
+            // let str="";
+            // for(reply of replyList){
+            //     str += `<tr>` +   
+            //                     `<td>` + reply.replyWriter + `</td>` +
+            //                     `<td>` + reply.replyContent + `</td>` +
+            //                     `<td>` + reply.createDate + `</td>` +
+            //             `</tr>`
+            //}
+            //     tBody.innerHTML = str;
+            
+            // 이벤튜를 넣는 뷰를 작성하고 싶을 때
+            for(const reply of replyList){
+                const replyRow = document.createElement('tr');
+                replyRow.innerHTML = `<td>` + reply.replyWriter + `</td>` +
+                                     `<td>` + reply.replyContent + `</td>` +
+                                     `<td>` + reply.createDate + `</td>` ;
+                tBody.appendChlid(replyRow);
+
+                replyRow.onclick = function(){
+                    console.log(reply.replyNo + "클릭됨")
+                }
+            }
+        }
+
+        // ajax 호출 후 결과 가져오기(댓글 목록)
+        function getReplyList(data, callback){
+            $.ajax({
+                url: "rlist.bo",
+                data : data,
+                success: function(res){
+                    callback(res)
+                },
+                error:function(){
+
+                }
+            })
+        }
+
+        // 댓글 등록
+        function addReply(){
+            // boardNo
+            // userId
+            // 댓글내용
+
+            const boardNo = ${b.boardNo};
+            const userId = "${loginUser.userId}"
+            const content = document.querySelector("#content").value;
+
+            addReplyAjax({
+                refBno: boardNo,
+                replyWriter: userId,
+                replyContent: content
+            }, function(res){
+                // res -> 성공 or 실패 가 나올 수 있다
+                if(res === "success"){
+                    document.querySelector
+
+                    getReplyList(sendData, function(replyList){
+                        setReplyCount
+                    })
+                }
+            })
+        }
+        
+        function addReplyAjax(data, callback){
+            $.ajax({
+                url: "rinsert.bo",
+                data: data, // 내가 보내는 데이터
+                success: function(){
+                    callback(res)
+                }, error:function(){
+                    console.log("댓글 생성 ajax 실패")
+                }
+            })
+        }
+    </script>
 </body>
 </html>

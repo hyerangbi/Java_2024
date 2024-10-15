@@ -47,8 +47,8 @@
      	constructor-arg : 생성자를 통한 주입
       -->
       
-      <beans class="org.springframework.web.multpart.commons.CommonsMultipartResolver" id="multpartResolver">
+      <bean class="org.springframework.web.multpart.commons.CommonsMultipartResolver" id="multpartResolver">
       	<property name="maxUploadSize" value="100000000"/>
       	<property name="maxInMemorySize" value="100000000"/>
-      </beans>
+      </bean>
 </beans>
