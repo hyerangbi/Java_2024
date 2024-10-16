@@ -3,14 +3,11 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.kh</groupId>
-	<artifactId>spring</artifactId>
-	<name>springProject</name>
+	<artifactId>etc</artifactId>
+	<name>springETC</name>
 	<packaging>war</packaging>
 	<version>1.0.0-BUILD-SNAPSHOT</version>
-	<!-- maven 의 역할 : 라이브러리(?) 의존성관리 -->
-	<!-- pom.xml
-		project[프로젝트 정보 + properties + repositories + dependencies + build]
-	 -->
+	
 	<properties> <!-- 변수화 -->
 		<java-version>1.8</java-version>
 		<org.springframework-version>5.3.22</org.springframework-version>
@@ -38,12 +35,7 @@
 			<version>${org.springframework-version}</version>
 		</dependency>
 				
-		<!-- AspectJ -->
-		<dependency>
-			<groupId>org.aspectj</groupId>
-			<artifactId>aspectjrt</artifactId>
-			<version>${org.aspectj-version}</version>
-		</dependency>	
+		
 		
 		<!-- Logging -->
 		<dependency>
@@ -220,6 +212,12 @@
 		    <version>${org.springframework-version}</version>
 		</dependency>
 		
+		<!-- AspectJ -->
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjrt</artifactId>
+			<version>${org.aspectj-version}</version>
+		</dependency>
 		
 		<!-- aspectjweaver:joinPoint 를 추가하기 위한 라이브러리 -->
 		<dependency>
@@ -228,6 +226,8 @@
 		    <version>1.9.7</version>
 		    <scope>runtime</scope>
 		</dependency>
+		
+		
 		
 	</dependencies>
 	

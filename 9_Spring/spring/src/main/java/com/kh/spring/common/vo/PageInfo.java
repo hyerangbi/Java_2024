@@ -10,7 +10,7 @@ import lombok.ToString;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
+@ToString 
 public class PageInfo {
 	int listCount; // 현재 총 게시글 수 25
 	int currentPage; // 현재 페이지 (사용자가 요청한 페이지) 1
