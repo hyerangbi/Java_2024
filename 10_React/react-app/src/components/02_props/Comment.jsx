@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react'
 
 // div 태그를 사용하는 것이 아닌 컴포넌트를 사용하는 중이다.
 
@@ -30,7 +30,7 @@ const styles = {
     }
 }
 
-function Comment(){
+function Comment(props){
     return(
         <div style={styles.wrapper}>
             <div>

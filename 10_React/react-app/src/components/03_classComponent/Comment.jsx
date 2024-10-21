@@ -36,7 +36,7 @@ class Commnet extends Component {
     // 컴포넌트를 상속 받는다.
 
     // js 에서는 class 에 필드영역이 없기 때문에
-    // 젖아하고 싶은 데이터를 state 라는 객체에 key-value 형태로 저장한다.
+    // 저장하고 싶은 데이터를 state 라는 객체에 key-value 형태로 저장한다.
     // (데이터를 state (필드) 를 만들어서 저장 하는 것이다. )
     this.state = {
         

@@ -45,7 +45,7 @@ class CommentList extends Component{
 
         // setInterval : 일정시간마다 특정 함수를 반복해서 실행
        setInterval(() => {
-            if(commentList.length < serverCommnets.length){ 
+            if(commentList.length < serverCommnets.length){ // 3초가 지나면 다시 실행
                 //더미데이터 길이만금 state 내의 데이터가 추가되면 그만하기 위한 조건
                 const index = commentList.length; // 0 1 2
                 commentList.push(serverCommnets[index]); 
@@ -54,6 +54,7 @@ class CommentList extends Component{
                 this.setState({
                     commentList : commentList 
                                 // : 부터 생략 가능 어차피 똑같다. 'ㅁ'
+                                // 
                     
                 })
             } else{
@@ -64,7 +65,7 @@ class CommentList extends Component{
        }, 3000);
     }
     
-    render(){
+    render(){ // 
         return (
             <div>
                 {
