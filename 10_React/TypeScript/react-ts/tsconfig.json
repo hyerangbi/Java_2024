@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "ES5",
+    "module": "CommonJS",
+    "strict": true,
+    "allowJs": true, 
+    // 자바스크립트 파일도 ts컴파일러가 컴파일에 포함시켜준다.
+    "jsx": "react-jsx",
+    "esModuleInterop": true, 
+    // es 모듈에서는 default 로 내보낸 값이 없는 모듈도 사용 가능하게 해줘
+  },
+  "include": ["src"],
+
+}
