@@ -6,13 +6,13 @@ import React, {Component } from 'react'
       state(필드대체) 를 가지고 있고 이를 수정할 수 있다.
       라이프사이클에 따른 생명주기 메소드를 사용할 수 있다.
 
-    ◼ state 값이 변경 되면 리액트느 변화를 인식하고 그에 맞는 화면을 출력하기 위해 
+    ◼ state 값이 변경 되면 리액트는 변화를 인식하고 그에 맞는 화면을 출력하기 위해 
       component 를 리랜더링한다. 하여 state 값을 변경할 때에는 state 에 어떤 숫자를 넣어서 변경하는 것이 아닌
       this.setState() 함수를 이용해서 새로운 state 값을 넣어주면 된다.
 
     ◼ react 의 component 라이프사이클은 생성(mount), 업데이터 (Update), 제거 (Unmount) 단계로 나누어
       각 단계마다 componentDidMount, componentDidUpdate, componentWillUnmount 같은 메소드를 사용해
-      DOM 을 조작하거나 리소스를 정리할 수 있는 ;^;
+      DOM 을 조작하거나 리소스를 정리할 수 있는 기능을 말한다.
 */
 
 const styles = {

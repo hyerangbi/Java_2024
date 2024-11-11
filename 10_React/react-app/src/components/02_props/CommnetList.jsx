@@ -23,7 +23,7 @@ const comments = [
         path: "https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDAxMDVfMTA4%2FMDAxNzA0NDQ3MDExMDI5.CIkngzcwSuTPyDGh6uD8rPjYgQbKUbcqb00iddqdvQIg.wMHL9dBhHvNIlxxNBalvVHKcxt2dn2R5dx4hdhI2CPog.JPEG.ppk0817%2FIMG_4604.jpg&type=ff332_332"
 
     }
-] // 뭔가 이상한데 ? 
+]
 
 /*
     js에서 
