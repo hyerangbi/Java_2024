@@ -143,7 +143,7 @@ public class BoardController {
 	@RequestMapping("rinsert.bo")
 	public String ajaxInsertReply(Reply r) {
 		// 성공했을 때 succecc를 보내고 , 실패했을 때에는 fail 을 보낸다.
-		return boardService.insertReply(r) > 0 ? "success" : "faill";
+		return boardService.insertReply(r) > 0 ? "success" : "fail";
 	}
 }
 
