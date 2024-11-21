@@ -11,9 +11,11 @@ public class PageController {
 	public String movePage(String page, String nick, HttpSession session) {
 		switch(page) {
 		case "pulbicData":
-			return "apiSample";
+			return "APITest";
 		case "summernote":
 			return "summernote";
+		case "naver":
+			return "naverLogin";
 		case "chat":
 			session.setAttribute("nick", nick);
 			return "chat";

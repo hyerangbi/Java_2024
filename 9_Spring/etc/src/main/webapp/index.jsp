@@ -35,6 +35,9 @@
 	<h3> 채팅창 : websocket </h3>
 	<h5> 닉네임 : <input type="text" name="nick" id=""></h5>
 	<h5><button onclick="moveChat">view -> </button></h5>
+	
+	<h3> 소셜 로그인 : naver </h3>
+	<h5><a href="detail?page=naver">view -> </a></h5>
 
 	<script>
 		function moveChat(){

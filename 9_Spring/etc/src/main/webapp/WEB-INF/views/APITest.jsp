@@ -5,7 +5,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
@@ -14,17 +13,6 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
-
-<!-- font -->
- <!--btn1 font-->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
- <!-- h1 font -->
- <link rel="preconnect" href="https://fonts.googleapis.com">
- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
- <link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@100..900&display=swap" rel="stylesheet">
-
 <!-- style-->
 <style>
     body{
@@ -57,30 +45,13 @@
 </style>
 </head>
 <body onload="init()">
- <h1> 실시간 대기오염 정보 </h1>
- 
- 지역 : 
- <select id="location">
-    <option>서울</option>
-    <option>대전</option>
-    <option>대구</option>
-    <option>부산</option>
- </select>
-
- <button id="btn1" class="btn btn-sm btn-primary" onclick="getAirStatusHandler()">
-    해당지역 대기오염 정보
- </button>
-
- <table id="result" class="table">
+<table id="result" class="table">
     <thead>
         <tr>
-            <th>측정소명</th>
-            <th>측정일시</th>
-            <th>통합대기 환경수치</th>
-            <th>미세먼지농도</th>
-            <th>일산화탄소농도</th>
-            <th>일산화질소농도</th>
-            <th>오존농도</th>
+            <th>지역</th>
+            <th>시도명</th>
+            <th>시군구명</th>
+            <th>시설 이름</th>
         </tr>        
     </thead>
     <tbody>
@@ -108,7 +79,7 @@
 
     function getAirStatus(data, callback){
         $.ajax({
-            url:"air",
+            url:"wave",
             data : data,
             success : function(result){
                 callback(result)
@@ -124,17 +95,13 @@
 
         for(const item of itemArr){
             parent.innerHTML += ("<tr>"
-                                + "<td>"+ item.stationName + "</td>"
-                                + "<td>"+ item.dataTime + "</td>"
-                                + "<td>"+ item.khaiValue + "</td>"
-                                + "<td>"+ item.pm10Value + "</td>"
-                                + "<td>"+ item.coValue + "</td>"
-                                + "<td>"+ item.no2Value + "</td>"
-                                + "<td>"+ item.o3Value + "</td>"
+                                + "<td>"+ row.ctprvn_nm + "</td>"
+                                + "<td>"+ row.sgg_nm + "</td>"
+                                + "<td>"+ row.dtl_adres + "</td>"
+                                + "<td>"+ row.vt_acmdfclty_nm + "</td>"                                
                                 +"</tr>")
         }
     }
  </script>
 </body>
- 
 </html>

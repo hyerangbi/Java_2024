@@ -16,7 +16,7 @@ public class APIController {
 	public static final String SERVICE_KEY = "V%2Fp0jmpnknwLHkbhBu%2Fg%2BCti2k%2FDxJ49zTGak3O7shgkxzjIvvjJBqvL4%2BQrgxPV6UHyjxJvhmzvOrTg2WZerA%3D%3D";
 	
 	@ResponseBody
-	@GetMapping(value = "air", produces="application.json; charset=UTF-8")
+	@GetMapping(value = "air", produces="application/json; charset=UTF-8")
 	public String getAirInfo(String location) throws IOException {
 		String url = "http://apis.data.go.kr/B552584/ArpltnInforInqireSvc/getCtprvnRltmMesureDnsty";
 		 url += "?serviceKey" + SERVICE_KEY;
