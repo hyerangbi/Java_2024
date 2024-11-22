@@ -7,57 +7,56 @@
 	
 	<!-- 
 		root-context.xml
-		서버 구동과 동시에 web.xml 을 거쳐서 바로 로딩되는 문서
-		=> 서버구동과 동시에 바로 세팅(been으로 등록)해야되는 내용들을 작성하면 된다.
-		DB연결 설정, 트랜잭션처리, 내 외부 모듈연결 등등 ...
+		서버구동과 동시에 web.xml을 거처서 바로 로딩되는 문서
+		=> 서버구동과 동시에 바로 세팅(빈으로 등록)해야되는 내용들을 작성하면된다.
+		DB연결 설정, 트랜잭션처리, 내외부 모듈연결등등...
 	 -->
 	 
-	 <!-- 커네션풀을 쓸 수 있는 객체 등록 -->
-	 <bean class="org.apache.commons.dbcp.BasicDataSource" id="dataSource" destroy-method="close">
+	 <!-- 커넥션풀을 쓸 수 있는 객체등록 -->
+ 	<bean class="org.apache.commons.dbcp.BasicDataSource" id="dataSource" destroy-method="close">
        <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
        <property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
        <property name="username" value="spring"/>
        <property name="password" value="spring"/>
     </bean>
     <!-- 
-    	BasicDataSource dateSource = new BasicDataSource();
-    	dateSource.setDriverClassName("oracle.jdbc.driver.OracleDriver");
+    	BasicDataSource dataSource = new BasicDataSource();
+    	dataSource.setDriverClassName("oracle.jdbc.driver.OracleDriver");
     	dataSource.setUrl("jdbc:oracle:thin:@localhost:1521:xe");
     	...
      -->
      
-     <!-- mybatis를 등록(연결)해주는 객체 -->
+     <!-- 마이바티스 객체 등록 -->
      <bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sqlSessionFactory">
         <property name="configLocation" value="classpath:mybatis-config.xml"/>
         <property name="dataSource" ref="dataSource"/>
      </bean>
      <!-- 
-     	sqlSessionFactoryBean sqlSessionFactory = new SqlSessionFactoryBean();
-     	sqlSessionFactory.setConfigLocation("classpath:mybatis-config.xml")
+     	SqlSessionFactoryBean sqlSessionFactory = new SqlSessionFactoryBean();
+     	sqlSessionFactory.setConfigLocation("classpath:mybatis-config.xml");
+     	...
       -->
       
-      <bean class="org.mybatis.springSqlSessionTemplate" id="sqlSession">
-      	<constructor-arg ref="sqlSessionFactory" />
+      <bean class="org.mybatis.spring.SqlSessionTemplate" id="sqlSession">
+      	<constructor-arg ref="sqlSessionFactory"/>
       </bean>
       
       <!-- 
-      	SqlSessionTemplate sqlSession = new SqlSEssionTempate(sqlSessionFactory);
+      	SqlSessionTemplate sqlSession= new SqlSessionTemplate(sqlSessionFactory);
        -->
+       
+       <!-- 
+       		property : setter를 통해 주입
+       		constructor-arg : 생성자를 통한 주입
+        -->
      
-     <!-- 
-     	property : setter 를 통해 주입
-     	constructor-arg : 생성자를 통한 주입
-      -->
-      
-      <bean class="org.springframework.web.multpart.commons.CommonsMultipartResolver" id="multpartResolver">
-      	<property name="maxUploadSize" value="100000000"/>
-      	<property name="maxInMemorySize" value="100000000"/>
-      </bean>
-      
-      <!-- @Aspect 어노테이션을 com.kh 경로에서 scan하겠다. -->
-      <context:component-scan base-package="com.kh" use-default-filters="false">
-      	<context:include-filter type="annotation"
-      		expression="org.aspectj.lang.annotion.Aspect" />
-      </context:component-scan> 
-      
+     <bean class="org.springframework.web.multipart.commons.CommonsMultipartResolver" id="multipartResolver">
+     	<property name="maxUploadSize" value="100000000"/>
+     	<property name="maxInMemorySize" value="100000000"/>
+     </bean>
+     
+     <!-- @Aspect 어노테이션도 scan 하기 위함 -->
+	<context:component-scan base-package="com.kh.aop" use-default-filters="false">
+		<context:include-filter type="annotation" expression="org.aspectj.lang.annotation.Aspect"/>
+	</context:component-scan> 
 </beans>

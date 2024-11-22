@@ -1,5 +1,6 @@
 package com.kh.spring.member.mode.dao;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.fail;
 
 import org.junit.Test;
@@ -35,13 +36,15 @@ public class MemberDaoTest {
 	public void testLoginMember() {
 		// fail("Not yes implemented");
 		Member m = new Member(); // Test 할 Member 객체 생성
-		m.setUserId("admin");
+		// m.setUserId("admin");
+		m.setUserId("user05");
 		
 		// 아이디로 member 찾아오는 것을 예상한다.
 		m = memberDao.loginMember(sqlSession, m);
 		log.info("member : {}", m);
 		if(m != null) {
-			
+			assertEquals("userNameEquals","관리자", m.getUserName()); 
+			// 동일 여부 확인 |  
 		} else {
 			fail("test LoginMember fail");
 		}
