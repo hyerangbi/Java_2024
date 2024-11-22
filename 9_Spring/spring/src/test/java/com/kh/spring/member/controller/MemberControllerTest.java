@@ -72,7 +72,7 @@ public class MemberControllerTest {
 		MvcResult result; // 요쳥결과를 받아줄 result 객체
 		
 		try {
-			mockMvc.perform(
+			result = mockMvc.perform(
 					get("/idCheck.me")
 					.param("checkId", "id000"))
 					.andExpect(status().isOk())
