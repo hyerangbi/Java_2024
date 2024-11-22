@@ -95,11 +95,11 @@
 			<version>1</version>
 		</dependency>
 				
-		<!-- Servlet -->
+		<!-- Servlet : @WebAppConfiguration 을 사용하기 위해서는 버전을 3.0으로 해줘야한다. -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
-			<artifactId>servlet-api</artifactId>
-			<version>2.5</version>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
@@ -230,8 +230,21 @@
 		</dependency>
 		
 		
+		<!-- Test 를 위한 junit 의존성 추가 -->
+		<dependency>
+		    <groupId>junit</groupId>
+		    <artifactId>junit</artifactId>
+		    <version>4.13</version>
+		    <scope>test</scope>
+		</dependency>
 		
-		
+		<!-- Spring MVC 웹 애플리 케이션 테스트를 위한 MockMvc를 제공해주는 라이브러리 -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-test</artifactId>
+		    <version>${org.springframework-version}</version>
+		</dependency>
+				
 	</dependencies>
 	
 	
