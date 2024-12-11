@@ -62,9 +62,9 @@ public class MemberControllerTest {
 				
 	}
 	/*
-	 * isFound : 302
-	 * isNotFound : 404
-	 * isOk() : 200
+	 * isFound : 302 | 리다이렉션
+	 * isNotFound : 404 | 클라이언트 에러
+	 * isOk() : 200 | 성공
 	 */
 	
 	@Test
