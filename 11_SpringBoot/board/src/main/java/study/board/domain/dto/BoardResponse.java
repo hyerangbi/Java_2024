@@ -1,0 +1,31 @@
+package study.board.domain.dto;
+
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
+import study.board.domain.entity.Board;
+
+import java.time.LocalDateTime;
+
+public class BoardResponse {
+
+    @Getter
+    @Setter
+    @Builder
+    public static class SimpleDTO{
+        private Long boardId;
+        private String memberEmail;
+        private String title;
+        private LocalDateTime createdAt;
+
+        public static SimpleDTO fromSimple(Board board){
+            return SimpleDTO.builder()
+                    .boardId(board.getBoardId())
+                    .memberEmail(board.getMemberEmail())
+                    .title(board.getTitle())
+                    .fileName(board.getFileName())
+                    .createAt(board.getCreateAt())
+                    .build();
+        }
+    }
+}
